@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import styles from "./Comments.module.css";
 import CommentBox from "../CommentBox/CommentBox";
 import CommentInput from "../CommentInput/CommentInput";
+import { handleDeepSortComments } from "../../utils/util";
 
 /*
 Reference Data Structure for comments and replies
@@ -36,37 +37,18 @@ Reference Data Structure for comments and replies
 ]
 */
 
-const handleSortComments = (unsortedComments, isSortAscending) => {
-  console.log("Before Sort: ", unsortedComments);
-  let tempComments = [];
-  //Sort the comments in ascending order
-  if (isSortAscending) {
-    tempComments = unsortedComments.sort((a, b) => {
-      return a.updated_at - b.updated_at;
-    });
-  } else {
-    //Sort in descending order
-    tempComments = unsortedComments.sort((a, b) => {
-      return b.updated_at - a.updated_at;
-    });
-  }
-
-  console.log("After Sort: ", tempComments);
-  return tempComments;
-};
-
 export default function Comments() {
   const oldComments = JSON.parse(localStorage.getItem("comments"));
   const [isSortAscending, setIsSortAscending] = useState(true);
   const [comments, setComments] = useState(
-    oldComments ? handleSortComments(oldComments, isSortAscending) : []
+    oldComments ? handleDeepSortComments(oldComments, isSortAscending) : []
   );
 
   const handleAddComment = (data, isComment, commentId = null) => {
     //handle comments
     if (isComment && !commentId) {
       setComments(
-        handleSortComments(
+        handleDeepSortComments(
           [
             ...comments,
             {
@@ -180,7 +162,7 @@ export default function Comments() {
           <button
             className={styles.sortBtn}
             onClick={() => {
-              setComments(handleSortComments(comments, !isSortAscending));
+              setComments(handleDeepSortComments(comments, !isSortAscending));
               setIsSortAscending(!isSortAscending);
             }}
           >
