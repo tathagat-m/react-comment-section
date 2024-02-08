@@ -1,0 +1,37 @@
+.commentsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.sortBtn {
+    background-color: #fff;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.noComments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 300px;
+    width: 600px;
+    max-width: 600px;
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.noCommentsTitle {
+    font-weight: bold;
+}
+
+.noCommentsSubtitle {
+    font-size: 14px;
+}

@@ -1,0 +1,74 @@
+@import '../../App.css';
+
+.commentInput,
+.replyInput {
+    position: relative;
+    width: var(--width-sm);
+    max-width: var(--width-sm);
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.replyInput {
+    width: 550px;
+    max-width: 550px;
+}
+
+.commentInputTitle {
+    margin: 0;
+    font-weight: bold;
+}
+
+.nameInput,
+.commentText {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.inputError {
+    border: 1px solid red;
+    border-radius: 3px;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.commentError {
+    position: absolute;
+    bottom: 15px;
+    left: 12px;
+    margin: 0;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+}
+
+.commentText {
+    resize: none;
+}
+
+.commentSubmit {
+    margin-left: auto;
+    background-color: #0094fe;
+    border: 1px solid #0094fe;
+    color: #fff;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+@media (min-width: 481px) {
+
+    .commentInput,
+    .replyInput {
+        width: var(--width-lg);
+        max-width: var(--width-lg);
+    }
+}

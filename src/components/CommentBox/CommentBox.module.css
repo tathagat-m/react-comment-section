@@ -1,0 +1,90 @@
+@import '../../App.css';
+
+.commentBox,
+.replyBox {
+    position: relative;
+    width: var(--width-sm);
+    max-width: var(--width-sm);
+    background-color: #f6f6f6;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.replyBox {
+    width: calc(var(--width-sm) - 25px);
+    max-width: calc(var(--width-sm) - 25px);
+}
+
+.commentHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.commentName,
+.commentDate,
+.commentText {
+    margin: 0;
+}
+
+.commentName {
+    font-weight: bold;
+}
+
+.commentDate {
+    font-size: 12px;
+}
+
+.commentActions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.commentReply,
+.commentEdit {
+    cursor: pointer;
+    color: #0094fe;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.commentDelete {
+    position: absolute;
+    top: calc(50% - 12px);
+    right: -12px;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+    border: none;
+    background-color: #575757;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 481px) {
+
+    .commentBox,
+    .replyBox {
+        width: var(--width-lg);
+        max-width: var(--width-lg);
+    }
+
+    .replyBox {
+        width: calc(var(--width-lg) - 50px);
+        max-width: calc(var(--width-lg) - 50px);
+    }
+}
