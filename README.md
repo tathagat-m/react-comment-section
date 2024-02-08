@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# React Comment Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React component for adding comments and replies with various features such as validation, sorting, editing, and deleting.
 
-## Available Scripts
+<img width="1271" alt="Screenshot 2024-02-08 at 7 20 01 PM" src="https://github.com/tathagat-m/react-comment-section/assets/101791679/f1a382c9-6560-4515-83a3-7537203b0756">
 
-In the project directory, you can run:
+<img width="392" alt="Screenshot 2024-02-08 at 7 19 36 PM" src="https://github.com/tathagat-m/react-comment-section/assets/101791679/47191f50-af4b-4fe3-a0cf-be5e6e77dd7c">
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Validates whether the name and comment text are entered before adding a comment or reply.
+- Saves each comment or reply with the current date and time.
+- Comments and replies are sortable by date and time.
+- Users can edit the comment/reply text by clicking on the edit button.
+- Users can see '(Edited)' tag beside edited comments/replies.
+- Users can view the date and time on which the comment/reply was last updated. On hovering over the timestamp, they can also see when the comment was initially added.
+- Delete button is placed on the border of the comment or reply for easy access.
+- Data persistence using localStorage to prevent loss of data on page refresh.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+To install and run the component locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+```bash
+git clone https://github.com/tathagat-m/react-comment-component.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd react-comment-component
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install dependencies:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This will run the application locally. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+To use the component in your React application, you can import it and include it in your components as needed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> *You can go to "App.js" to find the below code*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```jsx
+import React from 'react';
+import CommentComponent from './CommentComponent';
 
-### Code Splitting
+function App() {
+  return (
+    <div className="App">
+      <h1>My Comment Component</h1>
+      <CommentComponent />
+    </div>
+  );
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default App;
+```
 
-### Analyzing the Bundle Size
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To ensure the proper functioning of the application, comprehensive testing should be conducted. This includes testing all features mentioned in the requirements document:
 
-### Making a Progressive Web App
+- Validate if name and comment text are entered while adding a comment or a reply.
+- Check if each comment or reply is saved with the current date and time.
+- Test the sorting functionality to ensure comments and replies are sorted by date and time.
+- Verify that users can only edit the comment text and not the name.
+- Ensure the delete button is placed correctly and functions as expected.
+- Test data persistence using web storage to confirm that data is not lost on page refresh.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributions
 
-### Advanced Configuration
+Contributions are welcome! If you have any suggestions, improvements, or feature requests, feel free to open an issue or submit a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
+This project is open source and available under the MIT License. Feel free to use, modify, and distribute this code for any purpose with proper attribution.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
